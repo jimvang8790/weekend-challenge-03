@@ -72,3 +72,16 @@ Adjust the logic so that completed tasks are brought to the bottom of the page, 
 - [x] add serve the html file code(base url)
 - [x] restart server
 - [x] open page in browser
+
+**Database Setup**
+- [x] create new database ('weekend-challenge-03')
+- [x] create a table within db ('todo')
+- [x] id
+- [x] name
+- [x] task
+- [x] date to be done
+- [x] completed/or not
+- [x] npm install pg --save
+- [x] in server.js add require for pg
+- [x] add pool.config object
+- [x] create new pool with config

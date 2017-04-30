@@ -4,6 +4,18 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var port = 8790;
+var pg = require('pg');
+
+// postico config
+var config = {
+  database: 'todo', // name of database
+  host: 'localhost', // host of database
+  port: 5432, // default port # for database server
+  max: 12 // max number of ppl allow on the database
+};
+
+// create pool to connect to the database
+var pool = new pg.Pool(config);
 
 // uses
 app.use(express.static('public'));
