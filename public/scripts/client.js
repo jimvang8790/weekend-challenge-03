@@ -3,17 +3,17 @@ $(document).ready(onReady);
 
 function onReady(){
   //event listener
-  $('#submit').on('click', getTask);
+  $('#submit').on('click', addTask);
 
   getTask(); // getTask will display when DOM is loaded
 }// end of onReady
 
 function getTask() {
   $.ajax({
-    url: '/task',
-    type: 'GET',
+    url:'/task',
+    type:'GET',
     success: function(response){
-      console.log('in getTask', response);
+      console.log('in getTask:', response);
 
       $('.container').empty();
 
@@ -28,6 +28,7 @@ function getTask() {
 //**NOTE**
 // this function will allow user to add task to the database from the DOM
 function addTask() {
+  
   var objectToSend = {
     name: $('#name').val(),
     task: $('#task').val(),
@@ -36,8 +37,8 @@ function addTask() {
   };// end of objectToSend
 
   $.ajax({
-    url: '/addingTask',
-    type: 'POST',
+    url:'/addingTask',
+    type:'POST',
     data: objectToSend,
     success: function(response){
       console.log('adding tasks', response);

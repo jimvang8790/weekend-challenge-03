@@ -3,8 +3,8 @@ var express = require ('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var port = 8790;
 var pg = require('pg');
+var port = 8790;
 
 // postico config
 var config = {
@@ -67,7 +67,7 @@ app.get('/task', function(req, res){
 
 //**NOTE**
 // this app.post will allow users to add task to the database from the DOM
-app.post('/addTask', function(req, res){
+app.post('/addingTask', function(req, res){
   var data = req.body; // data from the client side
   var newTask = [// use and var array to store data
     data.name,
@@ -77,7 +77,7 @@ app.post('/addTask', function(req, res){
   ];// end of newTask array
 
   // a variable for inserting info
-  var insert = 'INSERT INTO todo (name, task, day_to_be_done, completed) VALUES($1, $2, $3, $4,)';
+  var insert = 'INSERT INTO todo (name, task, day_to_be_done, completed) VALUES($1, $2, $3, $4)';
 
   // connect to the database via pool
   pool.connect(function(err, connection, done){
@@ -87,7 +87,7 @@ app.post('/addTask', function(req, res){
       res.send(400);
     } // end error
     else {
-      connect.query(insert, newTask);
+      connection.query(insert, newTask);
       done();
       res.send(200);
     } // end no error
