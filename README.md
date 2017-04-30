@@ -38,9 +38,9 @@ Adjust the logic so that completed tasks are brought to the bottom of the page, 
 
 **Set up Node + Express to use Body-Parser**
 
--[x] npm init
--[x] npm install express --save
--[x] npm install body-parser --save
+- [x] npm init
+- [x] npm install express --save
+- [x] npm install body-parser --save
 
 **Client Side Setup**
 
