@@ -41,7 +41,7 @@ Adjust the logic so that completed tasks are brought to the bottom of the page, 
 - [x] npm init
 - [x] npm install express --save
 - [x] npm install body-parser --save
-- [] add npm start by adding node server.js to package.json
+- [x] add npm start by adding node server.js to package.json
 
 **Client Side Setup**
 
