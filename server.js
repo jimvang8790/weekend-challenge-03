@@ -67,4 +67,29 @@ app.get('/task', function(req, res){
 
 //**NOTE**
 // this app.post will allow users to add task to the database from the DOM
-app.post();// end of app.post
+app.post('/addTask', function(req, res){
+  var data = req.body; // data from the client side
+  var newTask = [// use and var array to store data
+    data.name,
+    data.task,
+    data.day,
+    data.done
+  ];// end of newTask array
+
+  // a variable for inserting info
+  var insert = 'INSERT INTO todo (name, task, day_to_be_done, completed) VALUES($1, $2, $3, $4,)';
+
+  // connect to the database via pool
+  pool.connect(function(err, connection, done){
+    // check if there is an error
+    if (err) {
+      console.log('err');
+      res.send(400);
+    } // end error
+    else {
+      connect.query(insert, newTask);
+      done();
+      res.send(200);
+    } // end no error
+  }); // end of pool.connect
+});// end of app.post '/addTask'
