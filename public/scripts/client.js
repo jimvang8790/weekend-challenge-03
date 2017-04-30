@@ -24,3 +24,25 @@ function getTask() {
     }// end of success
   }); // end of ajax
 }// end of getTask function
+
+//**NOTE**
+// this function will allow user to add task to the database from the DOM
+function addTask() {
+  var objectToSend = {
+    name: $('#name').val(),
+    task: $('#task').val(),
+    day: $('#day').val(),
+    done: $('#done').val(),
+  };// end of objectToSend
+
+  $.ajax({
+    url: '/addingTask',
+    type: 'POST',
+    data: objectToSend,
+    success: function(response){
+      console.log('adding tasks', response);
+      getTask();
+    }// end of success
+  });// end of ajax
+
+}// end of addTask

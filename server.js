@@ -59,8 +59,12 @@ app.get('/task', function(req, res){
         resultSet.on('end', function(){
           // close connection to reopen spot in pool
           done(); // close connection to reopen spot in pool
-          res.send(allTask); 
+          res.send(allTask);
       });// end on end
     } // end no Error
   }); // end of pool.connect
 }); // end of app.get '/getTask'
+
+//**NOTE**
+// this app.post will allow users to add task to the database from the DOM
+app.post();// end of app.post
