@@ -44,31 +44,31 @@ Adjust the logic so that completed tasks are brought to the bottom of the page, 
 
 **Client Side Setup**
 
--[x] create public folder
--[x] create vendors folder in public
--[x] create views folder in public
--[x] create index.html and styles.css in views folder
--[x] place jquery js file in vendors
--[x] create scripts folder in public
--[x] create client.js in scripts
--[x] src jquery, then client.js in index.html
--[x] link styles.css in index.html
--[x] add .gitignore file
--[x] gitignore .DS_Store and node_modules
+- [x] create public folder
+- [x] create vendors folder in public
+- [x] create views folder in public
+- [x] create index.html and styles.css in views folder
+- [x] place jquery js file in vendors
+- [x] create scripts folder in public
+- [x] create client.js in scripts
+- [x] src jquery, then client.js in index.html
+- [x] link styles.css in index.html
+- [x] add .gitignore file
+- [x] gitignore .DS_Store and node_modules
 
 **Server Side Setup**
 
--[x] create'server.js'
--[x] require the following:
+- [x] create'server.js'
+- [x] require the following:
     express
     path
     body-parser
--[x] set app to be an express app: var app = express() ;
--[x] set up uses:
--[x] bodyParser.urlencoded
--[x] express.static for public folder
--[x] add spin up server code (app.listen)
--[x] test server up
--[x] add serve the html file code(base url)
--[x] restart server
--[x] open page in browser
+- [x] set app to be an express app: var app = express() ;
+- [x] set up uses:
+- [x] bodyParser.urlencoded
+- [x] express.static for public folder
+- [x] add spin up server code (app.listen)
+- [x] test server up
+- [x] add serve the html file code(base url)
+- [x] restart server
+- [x] open page in browser
