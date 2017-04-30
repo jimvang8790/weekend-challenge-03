@@ -19,7 +19,11 @@ function getTask() {
 
       // this loop is how the appending new tasl will look on the DOM
       for (var i = 0; i < response.length; i++) {
-        $('.container').append('<p>Name: '+ response[i].name + ' | Task: '+ response[i].task + ' | Day to be Done by: '+ response[i].day_to_be_done + ' | Completed: '+ response[i].completed +'</p>'); // end of append
+        // $('.container').append('<p>Name: '+ response[i].name + ' | Task: '+ response[i].task + ' | Day to be Done by: '+ response[i].day_to_be_done + ' | Completed: '+ response[i].completed +'</p>'); // end of append
+        $('.container').append('<div class="person"><p>Name: ' + response[i].name + '</p>' +
+                                                    '<p>Task: ' + response[i].task + '</p>' +
+                                                    '<p>Day to be Done by: ' + response[i].day_to_be_done + '</p>' +
+                                                    '<p>Completed: ' + response[i].completed + '</p></div>');
       } // end of for loop
     }// end of success
   }); // end of ajax
@@ -28,7 +32,7 @@ function getTask() {
 //**NOTE**
 // this function will allow user to add task to the database from the DOM
 function addTask() {
-  
+
   var objectToSend = {
     name: $('#name').val(),
     task: $('#task').val(),
