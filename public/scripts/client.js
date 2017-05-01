@@ -58,12 +58,14 @@ function addTask() {
 // this function updatesthe DOM to a visual representation when user completes a tasks
 function complete() {
   console.log('color change');
-  if (($(this).parent().css('background-color')) === '#ffffff') {
-    $(this).parent().css('background-color', 'green');
-  }
-  else {
-    $(this).parent().css('background-color', '#ffffff');
-  }
+    $(this).css('background-color', 'green');
+
+  // if (($(this).parent().css('background-color')) === '#ffffff') {
+  //   $(this).parent().css('background-color', 'green');
+  // }
+  // else {
+  //   $(this).parent().css('background-color', '#ffffff');
+  // }
 }// end of completed function
 
 //**NOTE**
