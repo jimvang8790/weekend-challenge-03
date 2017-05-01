@@ -72,12 +72,12 @@ app.post('/addingTask', function(req, res){
   var newTask = [// use and var array to store data
     data.name,
     data.task,
-    data.day,
-    data.done
+    data.currentDate,
+    data.day
   ];// end of newTask array
 
   // a variable for inserting info
-  var insert = 'INSERT INTO todo (name, task, day_to_be_done, completed) VALUES($1, $2, $3, $4)';
+  var insert = 'INSERT INTO todo (name, task, day, day_to_be_done) VALUES($1, $2, $3, $4)';
 
   // connect to the database via pool
   pool.connect(function(err, connection, done){

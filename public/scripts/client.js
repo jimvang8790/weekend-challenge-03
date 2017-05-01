@@ -4,7 +4,7 @@ $(document).ready(onReady);
 function onReady(){
   //event listener
   $('#submit').on('click', addTask);
-  $(document).on('click', '.completed', completed);// creating a new document inorder to complete
+  $(document).on('click', '.complete', complete);// creating a new document inorder to complete
   $(document).on('click', '.delete', reassign); // creating a new document inorder to delete
   getTask(); // getTask will display when DOM is loaded
 }// end of onReady
@@ -23,8 +23,9 @@ function getTask() {
         // $('.container').append('<p>Name: '+ response[i].name + ' | Task: '+ response[i].task + ' | Day to be Done by: '+ response[i].day_to_be_done + ' | Completed: '+ response[i].completed +'</p>'); // end of append
         $('.container').append('<div class="person"><p>Name: ' + response[i].name + '</p>' +
                                                     '<p>Task: ' + response[i].task + '</p>' +
+                                                    '<p>Day: ' + response[i].day + '</p>' +
                                                     '<p>Day to be Done by: ' + response[i].day_to_be_done + '</p>' +
-                                                    '<p>Completed: ' + response[i].completed + '</p><button class="completed data-taskid=">Completed</button><button class="delete" data-taskid="'+response[i].id+'">Delete</button></div>');
+                                                    '</p><button class="complete data-taskid=">Completed</button><button class="delete" data-taskid="'+response[i].id+'">Delete</button></div>');
       } // end of for loop
     }// end of success
   }); // end of ajax
@@ -37,8 +38,8 @@ function addTask() {
   var objectToSend = {
     name: $('#name').val(),
     task: $('#task').val(),
+    currentDate: $('#current-date').val(),
     day: $('#day').val(),
-    done: $('#done').val(),
   };// end of objectToSend
 
   $.ajax({
@@ -55,7 +56,7 @@ function addTask() {
 
 //**NOTE**
 // this function updatesthe DOM to a visual representation when user completes a tasks
-function completed() {
+function complete() {
   console.log('color change');
   if (($(this).parent().css('background-color')) === '#ffffff') {
     $(this).parent().css('background-color', 'green');
