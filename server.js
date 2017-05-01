@@ -93,3 +93,20 @@ app.post('/addingTask', function(req, res){
     } // end no error
   }); // end of pool.connect
 });// end of app.post '/addTask'
+
+//**NOTE**
+// function for deleting task
+app.delete('/remove', function(req, res){
+  console.log('in /remove delete');
+  // connecting to the database
+  pool.connect(function(err, connection, done){
+    if (err) {
+      console.log(err);
+    }
+    else{
+      connection.query('DELETE FROM todo where id=' + req.body.id );
+      done();
+      res.send(200);
+    }// end of if/else statement
+  });// end of pool.connect
+});// end of app.delete
